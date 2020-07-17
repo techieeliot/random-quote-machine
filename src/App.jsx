@@ -257,9 +257,13 @@ const App = () => {
 	    {
 	    	quote:"Hapiness is not something ready made. It comes from your own actions.",
 	    	name:"Dalai Lama"
-	    }
+		}
+		
 	];
-  
+	const tweetQuote = () => {
+		return console.log("Tweet")
+	}
+	
   return(
     <Main id="main">
 		<Header />
@@ -270,7 +274,8 @@ const App = () => {
 			</section>
 			<section className="button-box">
 				<button id="new-quote">New Quote</button>
-				<a href="/tweet" id="tweet-quote" role="button">Tweet</a>
+				{/* twitter.com/intent/tweet */}
+				<a href="https://twitter.com/intent/tweet" id="tweet-quote" role="button">Tweet</a>
 			</section>
 		</div>
       
