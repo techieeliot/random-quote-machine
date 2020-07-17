@@ -1,13 +1,39 @@
 import React from "react";
+import Header from "./components/Header"
 import styled from 'styled-components';
 
 const Main = styled.main`
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
  {
 	width: 100vw;
 	height: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     align-content: stretch;
   }
@@ -20,12 +46,42 @@ const Main = styled.main`
   #quote-box {
     width: 50vw;
     margin: 0;
-    padding: 3em;
+	padding: 3em;
+	border-radius: 3em;
+	border: 0.1em black solid;
+  }
+
+.quote-author-box {
+	border-radius: 2em;
+	background: white;
+	padding: 1em;
+	border: 0.1em black solid;
+  }
+
+  #text, #author {
+	background: white;
+  }
+
+  #author {
+	  text-align: right;
   }
   
   .quote-author-box {
-    height: 30vh;
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
   }
+
+  .quote-header {
+	font-size: xx-large;
+	font-family: monospace;
+}
+
+.quote-header h1 {
+	background: white;
+
+}
   
   .flex-column {
     display: flex;
@@ -43,13 +99,13 @@ const Main = styled.main`
     justify-content: space-around;
     align-items: center;
     align-content: stretch;
-    font-size: 100%;
-  
+	font-size: 100%;  
+	margin: 2vh;
   }
   
   .button-box button, a {
-    width: 10vw;
-    height: 10vh;
+    width: 20vw;
+    height: 5vh;
     font-family: BrandonText-Medium,sans-serif;
     border: 1px solid #515762;
     text-align: center;
@@ -66,7 +122,13 @@ const Main = styled.main`
     cursor: default;
     background-color: white;
     padding: 0.1em 0.3em;
-  
+	border-radius: 3em;
+	font: 400 13.3333px Arial;
+	box-sizing: border-box;
+	appearance: button;
+	text-transform: none;
+	text-deocoration: none;
+	text-vertical-align: center;
   }
   
   .button-box button::selection, a::selection {
@@ -178,17 +240,15 @@ const App = () => {
   
   return(
     <Main id="main">
+		<Header />
 		<div id="quote-box">
-			<header className="quote-header flex-column">
-			<h1>Random Quote Machine</h1>
-			</header>
 			<section className="quote-author-box flex">
-			<article id="text">Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.</article>
-			<article id="author">- Francis of Assisi</article>
+				<article id="text">Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.</article>
+				<article id="author">- Francis of Assisi</article>
 			</section>
 			<section className="button-box">
-			<button id="new-quote">New Quote</button>
-			<a href="/tweet" id="tweet-quote" role="button">Tweet</a>
+				<button id="new-quote">New Quote</button>
+				<a href="/tweet" id="tweet-quote" role="button">Tweet</a>
 			</section>
 		</div>
       
