@@ -1,0 +1,71 @@
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+  
+  * {
+    font-size: 1rem;
+  }
+  
+  #quote-box {
+    width: 50vw;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .quote-author-box {
+    height: 30vh;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+  }
+  
+  .button-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    font-size: 100%;
+  
+  }
+  
+  .button-box button, a {
+    width: 10vw;
+    height: 10vh;
+    font-family: BrandonText-Medium,sans-serif;
+    border: 1px solid #515762;
+    text-align: center;
+    line-height: 1.15;
+    margin: 0;
+    overflow: visible;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    align-items: flex-start;
+    cursor: default;
+    background-color: white;
+    padding: 0.1em 0.3em;
+  
+  }
+  
+  .button-box button::selection, a::selection {
+    background: #e7e8e9;
+    text-shadow: none;  
+  }
+  
