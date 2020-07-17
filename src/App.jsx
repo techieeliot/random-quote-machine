@@ -1,7 +1,82 @@
 import React from "react";
+import styled from 'styled-components';
+
+const Main = styled.main`
+ {
+	width: 100vw;
+	height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+
+  * {
+    font-size: 1rem;
+	background: hotpink;
+  }
+  
+  #quote-box {
+    width: 50vw;
+    margin: 0;
+    padding: 3em;
+  }
+  
+  .quote-author-box {
+    height: 30vh;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+  }
+  
+  .button-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    font-size: 100%;
+  
+  }
+  
+  .button-box button, a {
+    width: 10vw;
+    height: 10vh;
+    font-family: BrandonText-Medium,sans-serif;
+    border: 1px solid #515762;
+    text-align: center;
+    line-height: 1.15;
+    margin: 0;
+    overflow: visible;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    align-items: flex-start;
+    cursor: default;
+    background-color: white;
+    padding: 0.1em 0.3em;
+  
+  }
+  
+  .button-box button::selection, a::selection {
+    background: #e7e8e9;
+    text-shadow: none;  
+  }
+`
+
 
 const App = () => {
-  
   const quoteSource=[
 		{
 			quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
@@ -99,24 +174,25 @@ const App = () => {
 	    	quote:"Hapiness is not something ready made. It comes from your own actions.",
 	    	name:"Dalai Lama"
 	    }
-
 	];
   
   return(
-    <main id="quote-box">
-      <header className="quote-header flex-column">
-        <h1>Random Quote Machine</h1>
-      </header>
-      <section className="quote-author-box flex">
-        
-          <article id="text">Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.</article>
-          <article id="author">- Francis of Assisi</article>
-      </section>
-      <section className="button-box">
-        <button id="new-quote">New Quote</button>
-        <a href="/tweet" id="tweet-quote" role="button">Tweet</a>
-      </section>
-    </main>
+    <Main id="main">
+		<div id="quote-box">
+			<header className="quote-header flex-column">
+			<h1>Random Quote Machine</h1>
+			</header>
+			<section className="quote-author-box flex">
+			<article id="text">Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.</article>
+			<article id="author">- Francis of Assisi</article>
+			</section>
+			<section className="button-box">
+			<button id="new-quote">New Quote</button>
+			<a href="/tweet" id="tweet-quote" role="button">Tweet</a>
+			</section>
+		</div>
+      
+    </Main>
   );
 }
 
