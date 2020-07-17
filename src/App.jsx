@@ -129,12 +129,34 @@ footer, header, hgroup, menu, nav, section {
 	text-transform: none;
 	text-deocoration: none;
 	text-vertical-align: center;
+	padding: 0.75em;
   }
   
   .button-box button::selection, a::selection {
     background: #e7e8e9;
     text-shadow: none;  
   }
+
+  @media (max-width: 768px) { 
+
+	.button-box {
+		display: flex;
+		flex-direction: column;
+		height: 15vh;
+	}
+	}
+	  
+	#new-quote, #tweet-quote {
+		width: 30vw;
+    	font-size: larger;
+	}
+   }
+
+   @media (max-width: 450px) {
+	#new-quote, #tweet-quote {
+		width: 40vw;
+    	font-size: smaller;
+   }
 `
 
 
