@@ -103,7 +103,7 @@ footer, header, hgroup, menu, nav, section {
 	margin: 2vh;
   }
   
-  .button-box button, a {
+  #new-quote, #tweet-quote {
     width: 20vw;
     height: 5vh;
     font-family: BrandonText-Medium,sans-serif;
@@ -261,31 +261,33 @@ var quoteSource=[
 const App = () => {
 	const [quoteObj, setQuoteObj] = useState(quoteSource[0])
 
-	const tweetQuote = () => {
-		return console.log("Tweet")
-	}
-
 	const newQuote = () => { 
 		const newIndex = Math.floor(Math.random() * quoteSource.length) + 1;
 		return setQuoteObj(quoteSource[newIndex]);
 	}
+
+	const getTextAndAuthor = () => {
+		const encodedQuote = encodeURI(quoteObj.quote)
+		const encodedAuthor = encodeURI(quoteObj.name)
+		const encodedStr = `${encodedQuote}%20%0A%20%0A${encodedAuthor}%20%0A%20%0A%23lifequotes`
+		return encodedStr;
+	}
 	
   return(
-    <Main id="main">
-		<Header />
-		<div id="quote-box">
-			<section className="quote-author-box flex">
-				<article id="text">{quoteObj.quote}</article>
-				<article id="author">{`- ${quoteObj.name}`}</article>
-			</section>
-			<section className="button-box">
-				<button id="new-quote" onClick={newQuote}>New Quote</button>
-				{/* twitter.com/intent/tweet */}
-				<a href="https://twitter.com/intent/tweet" id="tweet-quote" role="button">Tweet</a>
-			</section>
-		</div>
-      
-    </Main>
+		<Main id="main">
+			<Header />
+			<div id="quote-box">
+				<section className="quote-author-box flex">
+					<article id="text">{quoteObj.quote}</article>
+					<article id="author">{`- ${quoteObj.name}`}</article>
+				</section>
+				<section className="button-box">
+					<button id="new-quote" onClick={newQuote}>New Quote</button>
+					{/* twitter.com/intent/tweet */}
+					<a href={`https://twitter.com/intent/tweet?text=${getTextAndAuthor()}`} id="tweet-quote" role="button">Tweet</a>
+				</section>
+			</div>
+		</Main>
   );
 }
 
