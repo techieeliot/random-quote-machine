@@ -138,7 +138,7 @@ footer, header, hgroup, menu, nav, section {
 
   @media (max-width: 768px) { 
     #text, #author {
-        font-size: xx-large;
+        font-size: x-large;
     }
 	.button-box {
 		display: flex;
@@ -157,6 +157,10 @@ footer, header, hgroup, menu, nav, section {
 	#new-quote, #tweet-quote {
 		width: 40vw;
     	font-size: smaller;
+   }
+
+   #text, #author {
+    font-size: large;
    }
 ` 
 
