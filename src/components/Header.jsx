@@ -6,6 +6,10 @@ const StyledHeader = styled.header `
         font-size: xxx-large;
     }
 
+    .quote-header h1 {
+        text-align: center;
+    }
+
     @media (max-width: 450px) {
         .quote-header {
             font-size: xx-large;

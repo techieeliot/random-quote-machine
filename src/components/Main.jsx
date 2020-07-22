@@ -8,9 +8,13 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Main = () => {
     const [quoteObj, setQuoteObj] = useState(quoteSource[1])
-
+    console.log(quoteSource.length)
 	const newQuote = () => { 
-		const newIndex = Math.floor(Math.random() * quoteSource.length) + 1;
+        const newIndex = Math.floor(Math.random() * quoteSource.length);
+        console.log(newIndex);
+        if(quoteSource[newIndex===undefined]){
+            newIndex=0;
+        }
 		return setQuoteObj(quoteSource[newIndex]);
 	}
 

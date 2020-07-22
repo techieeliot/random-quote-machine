@@ -43,8 +43,8 @@ footer, header, hgroup, menu, nav, section {
   #quote-box {
     width: 50vw;
     margin: 0;
-	padding: 3em;
-	border-radius: 3em;
+	  padding: 3em;
+	  border-radius: 3em;
     border: 0.1em black solid;
     background: hotpink;
   }
@@ -62,11 +62,11 @@ footer, header, hgroup, menu, nav, section {
   }
 
   #author {
-	  text-align: right;
+	  text-align: center;
   }
   
   .quote-author-box {
-	height: 30vh;
+	height: 40vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -98,8 +98,9 @@ footer, header, hgroup, menu, nav, section {
     justify-content: space-around;
     align-items: center;
     align-content: stretch;
-	font-size: 100%;  
-	margin: 2vh;
+    font-size: 100%;  
+    margin: 2vh;
+    height: 20vh;
   }
   
   #new-quote, #tweet-quote {
@@ -121,14 +122,14 @@ footer, header, hgroup, menu, nav, section {
     cursor: default;
     background-color: white;
     padding: 0.1em 0.3em;
-	border-radius: 3em;
-	font: 400 13.3333px Arial;
-	box-sizing: border-box;
-	appearance: button;
-	text-transform: none;
-	text-deocoration: none;
-	text-vertical-align: center;
-	padding: 0.75em;
+    border-radius: 3em;
+    font: 400 13.3333px Arial;
+    box-sizing: border-box;
+    appearance: button;
+    text-transform: none;
+    text-deocoration: none;
+    text-vertical-align: center;
+    padding: 0.3em;
   }
   
   .button-box button::selection, a::selection {
@@ -161,6 +162,24 @@ footer, header, hgroup, menu, nav, section {
 
    #text, #author {
     font-size: large;
+   }
+  }
+   @media (max-height: 450px) {
+     #quote-box {
+        display: flex;
+        width: 80vw;
+     }
+     .button-box {
+      height: 40vh;
+     }
+     #new-quote, #tweet-quote {
+       height: 12vh;
+     }
+   }
+   @media (max-height: 300px) {
+    #author, #text {
+      font-size: large;
+    }
    }
 ` 
 
