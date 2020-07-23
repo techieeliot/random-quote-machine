@@ -36,7 +36,7 @@ const Main = () => {
                 <section className="button-box">
                     <button id="new-quote" onClick={newQuote}>New Quote</button>
                     {/* twitter.com/intent/tweet */}
-                    <a href={`https://twitter.com/intent/tweet?text=${getTextAndAuthor()}`} id="tweet-quote" role="button">
+                    <a href={`https://twitter.com/intent/tweet?text=${getTextAndAuthor()}`} id="tweet-quote" role="button" rel="noreferrer" target="_blank">
                         <FontAwesomeIcon icon={faTwitter} />&nbsp; Tweet
                     </a>
                 </section>
