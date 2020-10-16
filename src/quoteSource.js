@@ -140,7 +140,7 @@ var quoteSource=[
         name:"Wilma Rudolph"
     },
     {
-        quote:" used to want the words ‘She tried’ on my tombstone. Now I want ‘She did it.'",
+        quote:"I used to want the words ‘She tried’ on my tombstone. Now I want ‘She did it.'",
         name:"Katherine Dunham"
     },
     {
